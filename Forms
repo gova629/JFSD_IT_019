@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px;">
+
+    <h1 style="color: #333;">WELCOME TO MY PORTFOLIO</h1>
+
+    <a href="https://www.google.com/search?q=about+me">
+        <button style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">ABOUT ME</button>
+    </a>
+
+    <a href="https://www.google.com/search?q=about+me">
+        <button style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">SKILLS</button>
+    </a>
+
+    <a href="https://www.google.com/search?q=about+me">
+        <button style="padding: 10px 20px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">PROJECTS</button>
+    </a>
+
+    <h1 style="color: #333;">CONTACT ME</h1>
+
+    <form onsubmit="return validateForm()">
+        <label for="Name"> Name:</label>
+        <input type="text" id="name" style="padding: 5px;">
+        <br><br>
+
+        <label for="Email"> Email:</label>
+        <input type="email" id="email" style="padding: 5px;">
+        <br><br>
+
+        <b> What is your gender </b><br>
+        <input type="radio" id="male" name="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender">
+        <label for="female">Female</label>
+        <br><br>
+
+        <b>Select your interest</b><br>
+        <input type="checkbox" id="coding">
+        <label for="coding">Coding</label>
+        <input type="checkbox" id="reading">
+        <label for="reading">Reading</label>
+        <br><br>
+
+        <b>Feedback (up to 200 letters)</b><br>
+        <textarea id="feedback" rows="4" cols="30" maxlength="200" style="padding: 5px;"></textarea>
+        <br><br>
+
+        <button type="submit" style="padding: 10px 20px; background-color: #ffc107; color: black; border: none; border-radius: 5px; cursor: pointer;">Submit</button>
+    </form>
+
+
+</body>
+
+<script>
+    function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        if (name === "" || email === "") {
+            alert("Please fill in all required fields.");
+            return false;
+        } else {
+            alert("Successfully submitted!");
+            return true;
+        }
+    } <
+    alert > subimtted < /alert>
+</script>
+
+</html>
