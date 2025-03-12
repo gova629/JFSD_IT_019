@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alliance Weather Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-color: rgb(172, 173, 190);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="search"], button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: rgb(200, 203, 205);
+            color:white;
+            cursor: pointer;
+        }
+        .weather-info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alliance Weather Finder</h1>
+    <form>
+        <input type="search" id="city" placeholder="City" required>  
+        <button type="submit" onclick="getWeather(event)">Search</button>
+    </form>
+    <div class="weather-info">
+        <p id="cityName"></p>
+        <p>Temperature: <span id="temp"></span>℃</p>
+        <p>Max Temperature: <span id="tempMax"></span>℃</p>
+        <p>Min Temperature: <span id="tempMin"></span>℃</p>
+        <p>Humidity: <span id="humidity"></span>%</p>
+        <p>Description: <span id="description"></span></p>
+    </div>
+    <script>
+        const api = {
+            base: "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API
+          key:  70518c4811e2252ae41a0f9470aa3704
+        }
+        const form = document.querySelector('form');
+        const city = document.getElementById('city');
+       
+        function getWeather(event) {
+            event.preventDefault();
+            var cityName = city.value;
+            fetch(`${api.base}${cityName}&units=metric&appid=${api.key}`)
+                .then(response => response.json())
+                .then(data => showWeather(data))
+                .catch(error => console.log('Error:', error));
+        }
+       
+        function showWeather(data) {
+            console.log(data);
+            document.getElementById('cityName').textContent = data.name;
+            document.getElementById('temp').textContent = data.main.temp;
+            document.getElementById('tempMax').textContent = data.main.temp_max;
+            document.getElementById('tempMin').textContent = data.main.temp_min;
+            document.getElementById('humidity').textContent = data.main.humidity;
+            document.getElementById('description').textContent = data.weather[0].description;
+        }
+    </script>
+</body>
+</html>
