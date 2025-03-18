@@ -1,0 +1,146 @@
+/* Global styles */
+body {
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Title styling */
+h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Form styling */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #ff7eb3;
+    outline: none;
+}
+
+/* Button styling */
+.btn {
+    padding: 14px 20px;
+    font-size: 16px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    transform: translateY(-3px);
+}
+
+/* Random meal button */
+.btn-random {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin-top: 10px;
+}
+
+.btn-random:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+/* Results grid */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Individual meal cards */
+#results > div {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+#results > div:hover {
+    transform: translateY(-5px);
+}
+
+/* Meal images */
+#results img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Meal title */
+#results h3 {
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Ingredients list */
+#results ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#results li {
+    font-size: 14px;
+    padding: 5px;
+    color: #666;
+}
+
+/* Recipe link */
+#results a {
+    display: inline-block;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    padding: 12px 18px;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+#results a:hover {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
